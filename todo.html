@@ -7,16 +7,18 @@
     <div>
       <center>
         <h2>MY TODO LIST</h2>
-        <form>
-          <input type="text" id="textfield" />
+        <form id="form">
+          <input
+            type="text"
+            id="message"
+            title="Please enter your ToDo task in the list"
+            required
+          />
           <input type="submit" value="Add" id="button" />
 
-          <div class="events">
-            <input type="checkbox" id="check" onclick="cross()" />
-            <p id="text1">HEllo WOrld</p>
-          </div>
-          <div class="events">
-            <p>HEasdflaasdfffffasdfasdfasdfasdfasdfasdfasdfsdjfld</p>
+          <div class="events" id="events">
+            <!-- <input type="checkbox" id="check" onclick="cross()" /> -->
+            <p id="text1"></p>
           </div>
         </form>
       </center>
