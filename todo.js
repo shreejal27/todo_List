@@ -11,6 +11,8 @@ form.addEventListener('submit', event => {
     items.push(msg);
 
     var iterator = items.values();
+  
+    container.innerHTML = '';
 
     for(var i=0;i<items.length;i++){
         const newDiv = document.createElement("div");
