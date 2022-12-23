@@ -12,12 +12,15 @@ form.addEventListener('submit', event => {
 
     var iterator = items.values();
   
-    container.innerHTML = '';
+    container.innerHTML = ''; //Reset the list content whenever we print the todos, so we don't end up with duplicate todo items.
 
     for(var i=0;i<items.length;i++){
         const newDiv = document.createElement("div");
-        newDiv.classList.add('events');
+        newDiv.classList.add('events'); //css for new div
+        // document.getElementById("container").innerHTML = "<p>"+ items[i]+"</p>"
+        const text= document.createTextNode(items[i]);
         console.log(iterator.next().value);
+        newDiv.appendChild(text);
         container.appendChild(newDiv);
     }
    
