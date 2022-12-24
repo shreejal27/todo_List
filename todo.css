@@ -1,6 +1,8 @@
 *{
     padding: 0;
     margin: 0;
+    background-color: #742262;
+    color: whitesmoke;
 }
 h2{
     margin: 50px;
@@ -13,20 +15,24 @@ input[type="text"]{
     width: 50%;
     padding: 20px;
     border: 3px solid;
-    border-color: #2362CC;
+    border-color: #4b2142;
     border-radius: 7px;
     font-size: 20px;
     margin-bottom: 50px;
-
+    background-color: #4b2142;
 }
 
 #button{
     width: 90px;
     height: 50px;
     margin-left: 20px;
-    color: white;
-    background-color: rgb(39, 113, 241);
+ 
+    background-color: #032B43;
     border-radius: 7px;
+}
+
+#button:hover{
+    background-color: #3E6680 ;
 }
 
 .events{
@@ -34,13 +40,16 @@ input[type="text"]{
     height: 7%;
     padding: 0 50px 0 50px;
     margin-top: 10px;
-    background-color: cyan;
-    border: 1px solid blue;
+    background-color: #816E94;
+    border: 1px solid #816E94;
     border-radius: 7px;
 }
-
 .events:hover{
-    background-color: rgb(100, 108, 255);
+    background-color: #8D91C7;;
+}
+
+.events:hover p{
+    background-color: #8D91C7;;
 }
 
 input[type= "checkbox"]{
@@ -49,9 +58,9 @@ input[type= "checkbox"]{
     margin-right: 25px;
     height: 20px;
     width: 20px;
-    background-color: blue;
-    color: white;
+    accent-color: #816E94;
     border: none;
+    
 
 }
 p{
@@ -60,6 +69,9 @@ p{
     text-align: left;
     font-size: 20px;
     word-wrap: break-word;
-
+    background-color: #816E94;
+   
 }
+
+
 
