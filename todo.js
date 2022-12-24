@@ -18,10 +18,12 @@ form.addEventListener('submit', event => {
     for(var i=0;i<items.length;i++){
         const newDiv = document.createElement("div");
         const newp = document.createElement("p");
+        newp.id = "text"+(i+1);
         const checkBox = document.createElement("input");
         checkBox.type= "checkbox";
-        checkBox.id = "check";
-        checkBox.onclick = "cross()";
+        checkBox.id = i+1;
+        // checkBox.value= i+1;
+        checkBox.setAttribute('onclick', 'toggle(this.id)');
         
         newDiv.classList.add('events'); //creating class for the div
 
@@ -43,15 +45,27 @@ form.addEventListener('submit', event => {
   }
 });
 
-function cross(){
-    var checkBox= document.getElementById("check");
-    
+
+
+function toggle(id){
+    // console.log(id);
+    // var text = ;
+     var checkBox= document.getElementById(id);
+
     if(checkBox.checked == true){
-        text.style.textDecoration = "line-through";
+        // console.log("ticked");
+        // console.log(text);
+        document.getElementById("text"+id).style.textDecoration = "line-through";
+        
+        
     }
     else{
-        text.style.textDecoration = "none";
+        // console.log("unticked");
+        // console.log(text);
+        document.getElementById("text"+id).style.textDecoration = "none";
+     
     }
-  
+
 }
+
 
