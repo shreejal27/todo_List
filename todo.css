@@ -37,9 +37,12 @@ input[type="text"]{
     background-color: cyan;
     border: 1px solid blue;
     border-radius: 7px;
-    
-  
 }
+
+.events:hover{
+    background-color: rgb(100, 108, 255);
+}
+
 input[type= "checkbox"]{
     float: left;
     margin-top: 15px;
