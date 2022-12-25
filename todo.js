@@ -5,18 +5,20 @@ const container= document.getElementById("container");
 
 form.addEventListener('submit', event => {
   event.preventDefault();
+
   var con= confirm ("Do You Want To Add?");
   if (con == true){
- 
-    var msg = document.getElementById("message").value;
-    items.push(msg);
+      var msg = document.getElementById("message").value;
+      items.push(msg);
+      clearinput();
+
 
     // var iterator = items.values();
   
     // container.innerHTML = ''; //Reset the list content whenever we print the todos, so we don't end up with duplicate todo items.
 
 
-    for(var i=items.length-1;i<items.length;i++){
+    for(var i=items.length-1;i<items.length;i++){ //array ko last item ko lai matra run huncha 
         const newDiv = document.createElement("div");
         const newp = document.createElement("p");
         newp.id = "text"+(i+1);
@@ -69,6 +71,10 @@ function toggle(id){
      
     }
 
+}
+
+function clearinput(){
+    document.getElementById("message").value = "";
 }
 
 
