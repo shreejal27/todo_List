@@ -84,7 +84,9 @@ function clearinput(){
 }
 
 function trash(id){
-
+  var del= confirm ("Do You Really Wanna Delete?");
+  if (del == true){
     var d = document.getElementById("div" + id);
     d.remove();
+ }
 }
