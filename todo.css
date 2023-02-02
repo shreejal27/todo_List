@@ -73,5 +73,12 @@ p{
    
 }
 
-
+i{
+    font-size: 40px;
+    color: white;
+    float: right;
+    margin-top: 12px;
+    cursor: pointer;
+    background-color: #816E94;
+}
 

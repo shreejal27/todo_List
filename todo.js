@@ -20,6 +20,7 @@ form.addEventListener('submit', event => {
 
     for(var i=items.length-1;i<items.length;i++){ //array ko last item ko lai matra run huncha 
         const newDiv = document.createElement("div");
+        newDiv.id= "div" + (i+1);
         const newp = document.createElement("p");
         newp.id = "text"+(i+1);
         const checkBox = document.createElement("input");
@@ -27,13 +28,18 @@ form.addEventListener('submit', event => {
         checkBox.id = i+1;
         // checkBox.value= i+1;
         checkBox.setAttribute('onclick', 'toggle(this.id)');
-        
-     
-
+        //for delete icon
+        const trash = document.createElement("i");
+        trash.className="fa fa-trash-o";
+        trash.id=i+1;
+        trash.style.fontSize = "150%";
+        trash.setAttribute('onclick', 'trash(this.id)');
+       
         newDiv.classList.add('events'); //creating class for the div
 
         newDiv.appendChild(checkBox);
 
+        newDiv.appendChild(trash);
 
         const text= document.createTextNode(items[i]);
         // console.log(iterator.next().value);
@@ -77,4 +83,8 @@ function clearinput(){
     document.getElementById("message").value = "";
 }
 
+function trash(id){
 
+    var d = document.getElementById("div" + id);
+    d.remove();
+}
