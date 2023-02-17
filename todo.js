@@ -67,6 +67,8 @@ function toggle(id){
         // console.log("ticked");
         // console.log(text);
         document.getElementById("text"+id).style.textDecoration = "line-through";
+        document.getElementById("text"+id).style.textDecorationStyle = "wavy";
+        document.getElementById("text"+id).style.textDecorationThickness = "3px";
         
         
     }
