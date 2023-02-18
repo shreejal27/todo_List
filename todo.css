@@ -37,8 +37,9 @@ input[type="text"]{
     width: 65px;
     height: 45px;
     margin-left: 20px;
-    background-color: #032B43;
+    background-color: #E5E5E3;
     border-radius: 7px;
+    color: #141414;
 }
 
 #button:hover{
@@ -55,11 +56,13 @@ input[type="text"]{
     border-radius: 7px;
 }
 .events:hover{
-    background-color: #8D91C7;
+    background-color: #E5E5E3;
+    color: #141414;
 }
 
 .events:hover p{
-    background-color: #8D91C7;;
+    background-color: #E5E5E3;
+    color: #141414;
 }
 
 input[type= "checkbox"]{
