@@ -6,13 +6,33 @@ const container= document.getElementById("container");
 form.addEventListener('submit', event => {
   event.preventDefault();
 
-  var con= confirm ("Do You Want To Add?");
-  if (con == true){
+//   var con= confirm ("Do You Want To Add?");
+//   if (con == true){
+//       var msg = document.getElementById("message").value;
+//       items.push(msg);
+//       clearinput();
+    Swal.fire({
+        position: 'top-end',
+    title: 'Do you want to add?',
+    showCancelButton: true,
+    showConfirmButton: true,
+    confirmButtonText: 'Yes',
+    cancelButtonText: 'No',
+  }).then((result) => {
+    if (result.isConfirmed) {
       var msg = document.getElementById("message").value;
       items.push(msg);
       clearinput();
+      updateItems();
+      Swal.fire('Added!', '', 'success');
+    } else if (result.dismiss === Swal.DismissReason.cancel) {
+      Swal.fire('Cancelled', '', 'info');
+    }
+  });
+});
 
 
+function updateItems() {
     // var iterator = items.values();
   
     // container.innerHTML = ''; //Reset the list content whenever we print the todos, so we don't end up with duplicate todo items.
@@ -50,12 +70,8 @@ form.addEventListener('submit', event => {
         newDiv.appendChild(newp);//p tag lai new div ma haleko
         container.appendChild(newDiv);
     } 
-}
-  else{
-      return false;
-  }
-});
 
+}
 
 
 function toggle(id){
