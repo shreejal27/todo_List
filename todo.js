@@ -13,20 +13,24 @@ form.addEventListener('submit', event => {
 //       clearinput();
     Swal.fire({
         position: 'top-end',
-    title: 'Do you want to add?',
-    showCancelButton: true,
-    showConfirmButton: true,
-    confirmButtonText: 'Yes',
-    cancelButtonText: 'No',
+        title: 'Confirm Add?',
+        showCancelButton: true,
+        showConfirmButton: true,
+        confirmButtonText: 'Yes',
+        cancelButtonText: 'No',
   }).then((result) => {
     if (result.isConfirmed) {
-      var msg = document.getElementById("message").value;
-      items.push(msg);
-      clearinput();
-      updateItems();
-      Swal.fire('Added!', '', 'success');
+        var msg = document.getElementById("message").value;
+        items.push(msg);
+        clearinput();
+        updateItems();
+        Swal.fire({
+            position: 'top-end',
+            title: 'Successfully Added!',
+            showConfirmButton: false,
+            timer: 2000})
     } else if (result.dismiss === Swal.DismissReason.cancel) {
-      Swal.fire('Cancelled', '', 'info');
+     
     }
   });
 });
@@ -102,9 +106,29 @@ function clearinput(){
 }
 
 function trash(id){
-  var del= confirm ("Do You Really Wanna Delete?");
-  if (del == true){
-    var d = document.getElementById("div" + id);
-    d.remove();
- }
+//   var del= confirm ("Do You Really Wanna Delete?");
+//   if (del == true){
+//     var d = document.getElementById("div" + id);
+//     d.remove();
+//  }
+    Swal.fire({
+        position: 'top-end',
+        title: 'Confirm Delete?',
+        showCancelButton: true,
+        showConfirmButton: true,
+        confirmButtonText: 'Yes',
+        cancelButtonText: 'No',
+    }).then((result) => {
+    if (result.isConfirmed) {
+        var d = document.getElementById("div" + id);
+        d.remove();
+        Swal.fire({
+            position: 'top-end',
+            title: 'Successfully Deleted!',
+            showConfirmButton: false,
+            timer: 2000})
+    } else if (result.dismiss === Swal.DismissReason.cancel) {
+        // Swal.fire('Cancelled', '', 'info');
+    }
+    });
 }
