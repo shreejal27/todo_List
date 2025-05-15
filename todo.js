@@ -24,8 +24,11 @@ form.addEventListener('submit', event => {
         if (result.isConfirmed) {
             var msg = document.getElementById("message").value;
             items.push(msg);
+
+            //for localstorage
             localStorageItems.push({ message: msg, checked: false });
             localStorage.setItem("items", JSON.stringify(localStorageItems));
+
             clearinput();
             updateItems();
             Swal.fire({
@@ -96,13 +99,13 @@ function toggle(id) {
         document.getElementById("text" + id).style.textDecoration = "line-through";
         document.getElementById("text" + id).style.textDecorationStyle = "wavy";
         document.getElementById("text" + id).style.textDecorationThickness = "3px";
-
-
+        localStorageItems[id - 1].checked = true;
     }
     else {
         // console.log("unticked");
         // console.log(text);
         document.getElementById("text" + id).style.textDecoration = "none";
+        localStorageItems[id - 1].checked = false;
 
     }
 
